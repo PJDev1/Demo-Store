@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { FaShoppingCart, FaUser, FaHome, FaBoxOpen, FaBars } from "react-icons/fa";
+import { Link } from "react-router";
 
 export default function Header() {
   const { cart, toggleSidebar } = useCart();
@@ -51,9 +52,9 @@ export default function Header() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             {navLinks.map((link) => (
               <li className="nav-item" key={link.name}>
-                <a className="nav-link text-light" href={link.path}>
+                <Link className="nav-link text-light" href={link.path}>
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
