@@ -1,0 +1,306 @@
+body{
+  background-color: #1f1f1f;
+}
+
+.btnCart, .btnUser {
+  background-color:transparent;
+  color: #f1f1f1;
+  border: none;
+  position: relative;
+  font-size: 1.5rem; // mejor que 40px directo
+  padding: 0.5rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .cartItems {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.spinner-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+/* Agrega este CSS a tu archivo de estilos principal (App.css o index.css) */
+.pulse-animation {
+  box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7); /* Color del botón de advertencia */
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+  }
+}
+
+// /* Sugerencia de CSS para ProductCard */
+// .card-product:hover {
+//   transform: translateY(-5px); /* Desplaza la tarjeta un poco hacia arriba */
+//   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important; /* Aumenta la sombra */
+//   transition: all 0.3s ease-in-out;
+// }
+
+// /* Transición suave para el fondo del header */
+// .header-transition {
+//   transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+//   /* Asegura que el header esté siempre por encima de otros elementos */
+//   z-index: 1030;
+// }
+
+// /* Ajuste para centrar el logo */
+// /* Esto usa la clase de Bootstrap "position-absolute top-50 start-50 translate-middle" */
+// .navbar-brand {
+//   /* Es importante que no haya margen automático en el logo para que el centrado funcione */
+//   margin: 0 !important; 
+// }
+
+/* --- Mejoras para ProductDetail --- */
+
+/* Contenedor de la imagen para asegurar que no sea demasiado grande */
+.image-wrapper {
+  /* Fondo blanco/claro para productos con fondos transparentes (ej: PNG) */
+  background-color: #f8f9fa !important;
+  border: 1px solid #444; /* Borde sutil */
+  max-width: 450px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Restringe el tamaño máximo de la imagen dentro de su contenedor */
+.product-image-max {
+  max-height: 400px;
+  object-fit: contain; /* Asegura que la imagen se ajuste sin cortarse */
+}
+
+/* Spinner en modo oscuro */
+.spinner-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Asegura que el spinner esté en la parte superior */
+.spinner-container > .spinner-border {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Color del texto principal para contraste en fondo oscuro */
+body {
+  background-color: #1f1f1f;
+  color: white; /* Asegura que todo el texto por defecto sea blanco */
+}
+
+/* --- Estilos para la Tarjeta de Producto (Dark Mode) --- */
+
+/* Contenedor principal de la tarjeta */
+.product-card-dark {
+  background-color: #2c2c2c !important; /* Fondo oscuro sutil */
+  color: #f1f1f1 !important; /* Texto claro por defecto */
+  border: 1px solid #444 !important; /* Borde muy sutil para definición */
+  transition: all 0.3s ease-in-out; /* Preparar para la animación */
+}
+
+/* Efecto Hover (Interacción) */
+.card-hover-effect:hover {
+  transform: translateY(-5px); /* Desplaza la tarjeta un poco hacia arriba */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5) !important; /* Sombra más pronunciada */
+}
+
+/* Wrapper de la Imagen */
+.card-image-wrapper {
+  height: 200px;
+  background-color: #f8f9fa; /* Fondo claro para productos transparentes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #444; /* Separador de imagen */
+}
+
+/* Imagen dentro de la tarjeta */
+.product-card-image {
+  object-fit: contain !important; /* Asegura que la imagen se vea completa */
+  padding: 1rem; /* Pequeño padding para que no toque los bordes */
+}
+
+/* Iconos de estrellas */
+.star-icon {
+  font-size: 1rem; /* Tamaño adecuado para la tarjeta */
+  margin-right: 2px;
+}
+
+/* --- Estilos para la Tarjeta de Producto (Dark Mode) --- */
+
+/* 1. Contenedor principal de la tarjeta */
+.product-card-dark {
+  background-color: #2c2c2c !important; /* Fondo oscuro sutil */
+  color: #f1f1f1 !important; /* Texto claro por defecto */
+  border: 1px solid #444 !important; /* Borde muy sutil para definición */
+  transition: all 0.3s ease-in-out; /* Prepara para la animación hover */
+  overflow: hidden; /* Asegura que la sombra y el contenido se vean bien */
+}
+
+/* 2. Efecto Hover (Interacción) */
+.card-hover-effect:hover {
+  transform: translateY(-6px); /* Eleva la tarjeta */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7) !important; /* Sombra más pronunciada y oscura */
+}
+
+/* 3. Wrapper de la Imagen */
+.card-image-wrapper {
+  background-color: #f8f9fa; /* Fondo claro para productos transparentes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #444; /* Separador sutil */
+}
+
+/* 4. Imagen dentro de la tarjeta */
+.product-card-image {
+  padding: 1rem; /* Pequeño padding para que no toque los bordes */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 5. Estrellas de rating */
+.card-body span svg {
+  font-size: 1rem; /* Tamaño uniforme para las estrellas */
+  margin-right: 2px;
+}
+
+/* 6. Truncar/Limitar la descripción a un par de líneas (Mejora de UX) */
+.product-description-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limita a 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.5em; /* Altura mínima para asegurar espacio */
+  margin-bottom: 0.5rem; /* Espacio antes del rating */
+}
+
+/* --- Estilos para la Tarjeta de Producto (Dark Mode) --- */
+
+/* 1. Contenedor principal de la tarjeta */
+.product-card-dark {
+  background-color: #2c2c2c !important; /* Fondo oscuro sutil */
+  color: #f1f1f1 !important; /* Texto claro por defecto */
+  border: 1px solid #444 !important; /* Borde muy sutil para definición */
+  overflow: hidden; /* Asegura que la sombra y el contenido se vean bien */
+}
+
+
+/* 3. Wrapper de la Imagen */
+.card-image-wrapper {
+  background-color: #f8f9fa; /* Fondo claro para productos transparentes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #444; /* Separador sutil */
+}
+
+/* 4. Imagen dentro de la tarjeta */
+.product-card-image {
+  padding: 1rem; /* Pequeño padding para que no toque los bordes */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 5. Estrellas de rating */
+.card-body span svg {
+  font-size: 1rem; /* Tamaño uniforme para las estrellas */
+  margin-right: 2px;
+}
+
+/* 6. Truncar/Limitar la descripción a un par de líneas (Mejora de UX) */
+.product-description-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limita a 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.5em; /* Altura mínima para asegurar espacio */
+  margin-bottom: 0.5rem; /* Espacio antes del rating */
+}
+
+/* --- Estilos para la Tarjeta de Producto (Dark Mode) --- */
+
+/* --- Estilos para la Barra Lateral del Carrito (Dark Mode) --- */
+
+/* Ajuste del offcanvas para el modo oscuro */
+.offcanvas-dark {
+  background-color: #1f1f1f !important; /* Fondo del body */
+  color: #f1f1f1 !important; /* Texto principal claro */
+  width: 380px; /* Ancho fijo más profesional */
+}
+
+/* En pantallas pequeñas, usar el 100% del ancho */
+@media (max-width: 576px) {
+  .offcanvas-dark {
+      width: 100% !important;
+  }
+}
+
+/* Contenedor de la imagen del producto */
+.cart-item-img-wrapper {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  background-color: #f8f9fa; /* Fondo claro para productos transparentes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+}
+
+/* Imagen dentro del wrapper */
+.cart-item-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Asegura que la imagen no se corte */
+}
+
+/* Ajuste del texto para manejar el desbordamiento en una sola línea */
+.cart-item-list .text-truncate {
+  max-width: 180px; /* Limita el ancho del título para que quepa todo */
+}
+
+/* Espacio para la lista de items con scroll */
+.sidebar-cart-items {
+  max-height: calc(100vh - 250px); /* Deja espacio para el header y el footer */
+}

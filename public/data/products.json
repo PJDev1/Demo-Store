@@ -1,0 +1,131 @@
+[
+    {
+      "id": 1,
+      "title": "Mochila Urbana Premium",
+      "description": "Mochila de poliéster resistente al agua, con múltiples compartimentos y soporte ergonómico para laptop de hasta 15\".",
+      "price": 749.99,
+      "sku": "MB-URB-001",
+      "stock": {
+        "available": true,
+        "quantity": 25
+      },
+      "category": "Mochilas",
+      "tags": ["urbana", "laptop", "resistente al agua"],
+      "rating": 4.5,
+      "reviews": 12,
+      "image": "/img/mochila.png"
+    },
+    {
+      "id": 2,
+      "title": "Auriculares Inalámbricos NoiseCancel 2025",
+      "description": "Auriculares bluetooth con cancelación de ruido activa, batería de 30h y carga rápida.",
+      "price": 1299.99,
+      "sku": "AU-NC-2025",
+      "stock": {
+        "available": true,
+        "quantity": 25
+      },
+      "category": "Audio",
+      "tags": ["bluetooth", "cancelación de ruido", "premium"],
+      "rating": 4.8,
+      "reviews": 45,
+      "image": "/img/audifonos.png"
+    },
+    {
+      "id": 3,
+      "title": "Botella Deportiva Acero Inoxidable",
+      "description": "Botella de agua de 750ml, acero inoxidable, mantiene la temperatura fría o caliente por 12h.",
+      "price": 249.99,
+      "sku": "BT-DEP-750",
+      "stock": {
+        "available": true,
+        "quantity": 25
+      },
+      "category": "Accesorios",
+      "tags": ["deporte", "acero inoxidable", "termo"],
+      "rating": 4.2,
+      "reviews": 23,
+      "image": "/img/botella.png"
+    },
+    {
+      "id": 4,
+      "title": "Camiseta Casual Algodón Orgánico",
+      "description": "Camiseta unisex 100% algodón orgánico, suave al tacto, disponible en varias tallas y colores.",
+      "price": 349.99,
+      "sku": "CM-ORG-001",
+      "stock": {
+        "available": true,
+        "quantity": 25
+      },
+      "category": "Ropa",
+      "tags": ["algodón orgánico", "casual", "unisex"],
+      "rating": 4.6,
+      "reviews": 30,
+      "image": "/img/sueter-verde.png"
+    },
+    {
+      "id": 5,
+      "title": "Reloj Deportivo Smartwatch",
+      "description": "Smartwatch con monitor de ritmo cardíaco, GPS integrado y resistente al agua hasta 50m.",
+      "price": 2599.99,
+      "sku": "RW-SMART-01",
+      "stock": {
+        "available": true,
+        "quantity": 25
+      },
+      "category": "Tecnología",
+      "tags": ["smartwatch", "deporte", "gps"],
+      "rating": 4.7,
+      "reviews": 18,
+      "image": "/img/smart-watch.png"
+    },
+    {
+      "id": 6,
+      "title": "Gorra Ajustable Street Style",
+      "description": "Gorra unisex, diseño moderno, ajuste trasero con velcro, ideal para deporte o calle.",
+      "price": 179.99,
+      "sku": "GR-STREET-01",
+      "stock": {
+        "available": true,
+        "quantity": 25
+      },
+      "category": "Accesorios",
+      "tags": ["gorra", "street style", "unisex"],
+      "rating": 4.1,
+      "reviews": 12,
+      "image": "/img/cap.png"
+    },
+    {
+      "id": 7,
+      "title": "Zapatos Running UltraLight",
+      "description": "Zapatillas deportivas para running, diseño ultraligero, con amortiguación avanzada y suela antideslizante.",
+      "price": 1899.99,
+      "sku": "ZP-RUN-UL01",
+      "stock": {
+        "available": true,
+        "quantity": 25
+      },
+      "category": "Calzado",
+      "tags": ["running", "deporte", "ligero"],
+      "rating": 4.4,
+      "reviews": 27,
+      "image": "/img/tennis.png"
+    },
+    {
+      "id": 8,
+      "title": "Mochila Trekking 40L",
+      "description": "Mochila de trekking de 40 litros, resistente al agua, con soporte lumbar y múltiples bolsillos de fácil acceso.",
+      "price": 1299.99,
+      "sku": "MB-TREK-40",
+      "stock": {
+        "available": true,
+        "quantity": 25
+      },
+      "category": "Mochilas",
+      "tags": ["trekking", "aventura", "resistente al agua"],
+      "rating": 4.7,
+      "reviews": 16,
+      "image": "/img/mochila-deportiva.png"
+    }
+  ]
+  
