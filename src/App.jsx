@@ -62,7 +62,7 @@ function Home({ products }) {
         {/* Botón para ver más, solo si hay más de 6 productos */}
         {products.length > 6 && (
             <div className="text-center mt-5">
-                <Link to="/all-products" className="btn btn-outline-light btn-lg">Ver Catálogo Completo</Link>
+                <Link to="/products" className="btn btn-outline-light btn-lg">Ver Catálogo Completo</Link>
             </div>
         )}
       </section>
