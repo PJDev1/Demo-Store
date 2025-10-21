@@ -4,89 +4,101 @@ import { CartProvider } from "./context/CartContext";
 import Header from "./components/Header";
 import CartSidebar from "./components/CartSidebar";
 import ProductCard from "./components/ProductCard";
-import { Link } from "react-router-dom";
-import ProductDetail from "./components/ProductDetail"; // nuevo componente
+import ProductDetail from "./components/ProductDetail"; 
 import Products from "./components/Products";
+import Footer from "./components/Footer";
 
-function Feature({ iconClass, title, description }){
+/* ----------------- Feature (solo diseño) ----------------- */
+function Feature({ iconClass, title, description }) {
   return (
     <div className="col-md-4 text-center mb-4">
-      <i className={`bi ${iconClass} display-4 text-success mb-3`}></i> {/* Ícono de Bootstrap Icons */}
-      <h5 className="fw-bold">{title}</h5>
-      <p className="text-muted">{description}</p>
+      <div className="p-4 h-100 rounded-4 bg-gradient-to-br from-green-500 to-green-400 text-white shadow-lg">
+        <i className={`bi ${iconClass} display-4 mb-3`}></i>
+        <h5 className="fw-bold">{title}</h5>
+        <p className="small">{description}</p>
+      </div>
     </div>
   );
 }
 
+/* ----------------- HOME ----------------- */
 function Home({ products }) {
-
   const featuredProducts = products.slice(0, 4);
 
   return (
     <div>
-      {/* 1. SECCIÓN HERO / BANNER IMPACTANTE */}
-      <header className="p-5 p-md-5 text-center bg-image shadow-1-strong"
-        // Estilo en línea para un fondo más dinámico (puedes usar una imagen real)
-        style={{ 
-          backgroundImage: 'url("https://via.placeholder.com/1200x500?text=Banner+Impactante+de+Tienda")',
-          height: '500px',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)' // Capa semi-transparente
-        }}>
-        <div className="mask d-flex justify-content-center align-items-center h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+      {/* HERO / BANNER */}
+      <header
+        className="p-5 text-center shadow-lg"
+        style={{
+          backgroundImage: 'url("https://via.placeholder.com/1400x600?text=Tienda+Impactante")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: 500,
+        }}
+      >
+        <div className="mask d-flex justify-content-center align-items-center h-100" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
           <div className="text-white">
-            <h1 className="mb-3 display-3 fw-bolder">¡Descuentos de Fin de Semana!</h1>
-            <h4 className="mb-4 lead">Encuentra los mejores productos de **Tecnología y Moda** con hasta un 50% OFF.</h4>
-            {/* Usamos Link para navegación interna */}
-            <Link to="/products" className="btn btn-warning btn-lg me-2 fw-bold pulse-animation" style={{ zIndex: 10 }}>
-                Explora Ahora
-            </Link>
+            <h1 className="display-3 fw-bolder mb-3">¡Fin de Semana de Ofertas!</h1>
+            <h4 className="mb-4">Hasta <span className="text-warning">50% OFF</span> en productos seleccionados</h4>
+            <a href="/products" className="btn btn-warning btn-lg fw-bold me-2">Explora Ahora</a>
+            <a href="#features" className="btn btn-outline-light btn-lg">Qué ofrecemos</a>
           </div>
         </div>
       </header>
 
-      {/* 2. SECCIÓN DE PRODUCTOS DESTACADOS */}
+      {/* PRODUCTOS DESTACADOS */}
       <section id="products" className="container my-5">
-        <h2 className="text-center mb-4 fw-light border-bottom pb-2 text-light">PRODUCTOS DESTACADOS</h2>
-        
-        {/* Usamos una cuadrícula de 4 columnas en desktop para mejor densidad */}
+        <h2 className="text-center mb-4 fw-bold text-light border-bottom pb-2">PRODUCTOS DESTACADOS</h2>
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
           {featuredProducts.map((product) => (
             <div key={product.id} className="col">
-              <ProductCard className="card-product" product={product} />
+              <ProductCard product={product} />
             </div>
           ))}
         </div>
-
-        {/* Botón para ver más, solo si hay más de 6 productos */}
-        {products.length > 6 && (
-            <div className="text-center mt-5">
-                <Link to="/products" className="btn btn-outline-light btn-lg">Ver Catálogo Completo</Link>
-            </div>
-        )}
       </section>
-      
-      {/* 3. SECCIÓN DE CARACTERÍSTICAS/INFO ADICIONAL MEJORADA */}
-      <section className="info py-5 bg-light">
+
+      {/* SECCIÓN DE BENEFICIOS / FEATURES */}
+      <section id="features" className="py-5" style={{ background: "linear-gradient(to bottom, #071029, #0b1224)" }}>
         <div className="container">
-          <h2 className="text-center mb-5 fw-bold text-success">¿Por qué Comprar con Nosotros?</h2>
-          <div className="row">
-            <Feature 
-                iconClass="bi-truck" 
-                title="Envío Rápido y Seguro" 
-                description="Recibe tus productos en 24/48 horas sin costo adicional en pedidos mayores a $500."
+          <h2 className="text-center text-white fw-bold mb-5">¿Por qué comprar con nosotros?</h2>
+          <div className="row g-4">
+            <Feature
+              iconClass="bi-truck"
+              title="Envío Rápido y Seguro"
+              description="Recibe tus productos en 24/48 horas sin costo adicional en pedidos mayores a $500."
             />
-            <Feature 
-                iconClass="bi-patch-check" 
-                title="Calidad Garantizada" 
-                description="Solo ofrecemos productos probados y con garantía de satisfacción total."
+            <Feature
+              iconClass="bi-patch-check"
+              title="Calidad Garantizada"
+              description="Solo ofrecemos productos probados y con garantía de satisfacción total."
             />
-            <Feature 
-                iconClass="bi-headset" 
-                title="Soporte 24/7" 
-                description="Nuestro equipo de atención al cliente está siempre listo para ayudarte, ¡a cualquier hora!"
+            <Feature
+              iconClass="bi-headset"
+              title="Soporte 24/7"
+              description="Nuestro equipo de atención al cliente está siempre listo para ayudarte, ¡a cualquier hora!"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* BANNERS DE CATEGORÍAS */}
+      <section className="container my-5">
+        <div className="row g-3">
+          <div className="col-md-6">
+            <div className="p-4 rounded-4 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center shadow-lg" style={{ minHeight: 150 }}>
+              <h4 className="fw-bold">Electrónica Destacada</h4>
+              <p>Teléfonos, auriculares y gadgets con envío express.</p>
+              <a href="/products" className="btn btn-outline-light">Ver electrónicos</a>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="p-4 rounded-4 bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center shadow-lg" style={{ minHeight: 150 }}>
+              <h4 className="fw-bold">Moda y Accesorios</h4>
+              <p>Curado por nuestro equipo: lo último en tendencia.</p>
+              <a href="/products" className="btn btn-outline-light">Ver moda</a>
+            </div>
           </div>
         </div>
       </section>
@@ -94,6 +106,7 @@ function Home({ products }) {
   );
 }
 
+/* ----------------- APP ----------------- */
 function App() {
   const [products, setProducts] = useState([]);
 
@@ -114,6 +127,7 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail products={products} />} />
           <Route path="/products" element={<Products products={products}/>}/>
         </Routes>
+        <Footer />
       </Router>
     </CartProvider>
   );
